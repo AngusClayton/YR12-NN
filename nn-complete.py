@@ -76,7 +76,7 @@ def predict(w1,w2,input):
         print("For input", [i[0] for i in input], "output is 1")
     else:
         print("For input", [i[0] for i in input], "output is 0")
-
+"""
 test = np.array([[0],[0]])
 predict(w1,w2,test)
 
@@ -88,3 +88,20 @@ predict(w1,w2,test)
 
 test = np.array([[1],[1]])
 predict(w1,w2,test)
+"""
+
+# print out the weights
+print("Weights for hidden layer:\n", w1)
+print("Weights for output layer:\n", w2)
+
+inp = input("> ")
+while inp:
+    try:
+        test = inp.split(" ")
+        a = int(test[0])
+        b = int(test[1])
+        test = np.array([[a],[b]])
+        predict(w1, w2, test)
+    except Exception as e:
+        print("Error:", e)
+    inp = input("> ")
